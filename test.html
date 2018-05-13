@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Space Landscape Animation</title>
+    <style media="screen">
+
+    #return {
+      width: 200px;
+      height:100px;
+      position: fixed;
+      bottom: 1300px;
+      left:200px;
+    }
+
+      #border{
+        border: 5px solid black;
+        height: 1300px;
+        width: 2000px;
+        margin: auto;
+        overflow: hidden;
+      }
+
+      #activator{
+        position: relative;
+        height: 150px;
+        width: 150px;
+        left:1760px;
+        top: 1060px;
+        z-index: 8;
+      }
+
+      #fbackground{
+        position: relative;
+        bottom: 200px;
+        z-index: 1;
+
+      }
+
+      #platform{
+        animation: play 10s steps(120) infinite;
+        position:absolute;
+        top:300px;
+        width:1800px;
+        height:900px;
+        z-index: 8;
+        animation-name: platform;
+      }
+
+      #star{
+        position: absolute;
+        right:-120px;
+        top: -1400px;
+        width: 1200px;
+        height: 1200px;
+        transition: all 90s ease-in;
+        z-index: 2;
+      }
+
+      #crystalt{
+        position:absolute;
+        width: 4400px;
+        height:4400px;
+        bottom:-900px;
+        right:-1000px;
+        transform: rotate(0deg);
+        transition: all 90s ease-in;
+      }
+
+      #crystals{
+        position: absolute;
+        width: 900px;
+        height: 180px;
+        bottom: 1000px;
+        right: 1100px;
+        animation: play 15s steps(360) infinite;
+        animation-name: crystals;
+        transform: rotate(-25deg);
+      }
+
+      #floatingcrystal1{
+      position:relative;
+      left:-1200px;
+      top:-700px;
+      animation: play 10s steps(120) infinite;
+      animation-name: crystal1;
+      }
+
+      #floatingcrystal2{
+        position:relative;
+        left:-450px;
+        top:-700px;
+        width:300px;
+        animation: play 10s steps(120) infinite;
+        animation-name: crystal2;
+      }
+
+
+      #activator:hover>#star{transform:translate(0px, 0px); transform:rotate(1800deg);opacity:1;
+        position:absolute;
+        right:-120px;
+        top: -1400px;
+        z-index: 2;
+      }
+
+      #activator:hover>#crystalt{transform:translate(0px, 0px); transform:rotate(-1800deg);opacity:1;
+        z-index: 2;
+      }
+      /* .stage:hover{animation: play 1.8s steps(12) infinite;} */
+
+      @keyframes platform {
+        0% {background-position: 0px;
+        top:16em;
+                      }
+        50% {background-position: 0px;
+        top:15em;
+      }
+        100% {background-position: 0px;
+        top:16em;
+                      }
+      }
+
+      @keyframes crystal1 {
+        0% {background-position: 0px;
+          position:relative;
+          left:-1200px;
+          top:-700px;
+          transform: rotate(-30deg);
+                      }
+        20% {background-position: 0px;
+          position:relative;
+          left:-1220px;
+          top:-690px;
+          transform: rotate(-28deg);
+        }
+        40% {background-position: 0px;
+          position:relative;
+          left:-1230px;
+          top:-680px;
+          transform: rotate(-24deg);
+      }
+        60% {background-position: 0px;
+          position:relative;
+          left:-1220px;
+          top:-670px;
+          transform: rotate(-28deg);
+      }
+        80% {background-position: 0px;
+          position:relative;
+          left:-1215px;
+          top:-685px;
+          transform: rotate(-29deg);
+      }
+        100% {background-position: 0px;
+          position:relative;
+          left:-1200px;
+          top:-700px;
+          transform: rotate(-30deg);
+                      }
+      }
+
+      @keyframes crystal2 {
+        0% {background-position: 0px;
+          position:relative;
+          left:-450px;
+          top:-700px;
+          width:300px;
+                      }
+        20% {background-position: 0px;
+          position:relative;
+          left:-460px;
+          top:-685px;
+          width:300px;
+        }
+        40% {background-position: 0px;
+          position:relative;
+          left:-463px;
+          top:-678px;
+          width:300px;
+          transform: rotate(-3deg);
+      }
+        60% {background-position: 0px;
+          position:relative;
+          left:-460px;
+          top:-683px;
+          width:300px;
+          transform: rotate(-2deg);
+      }
+        80% {background-position: 0px;
+          position:relative;
+          left:-456px;
+          top:-691px;
+          width:300px;
+          transform: rotate(-3deg);
+      }
+        100% {background-position: 0px;
+          position:relative;
+          left:-450px;
+          top:-700px;
+          width:300px;
+                      }
+      }
+
+      @keyframes crystals{
+        0%{transform: rotate(-25deg);
+          bottom: 1020px;
+          right: 1080px;
+        }
+
+        50%{transform: rotate(-25deg);
+          bottom: 1000px;
+          right: 1120px;
+
+        }
+
+        100%{transform: rotate(-25deg);
+          bottom: 1020px;
+          right: 1080px;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="border">
+
+<!-- platform -->
+<img id="platform" src="pieces/fantasyplatform.png" alt="platform">
+
+<!-- activator -->
+<div id="activator">
+
+<!-- star -->
+<img id="star" src="pieces/brightstar.png" alt="A Bright Star">
+
+ <img id="crystalt" src="pieces/crystaltorrent.png" alt="crystal torrent">
+
+ <img id="floatingcrystal1" src="pieces/floatingcrystal.png" alt="floating crystal">
+
+ <img id="floatingcrystal2" src="pieces/floatingcrystal.png" alt="another floating crystal">
+
+        <!-- attempt at svg : background crystal storm -->
+ <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3116.79 587.54" id="crystals"><defs><style>.cls-1{fill:url(#linear-gradient);}.cls-2{fill:url(#linear-gradient-2);}.cls-3{fill:url(#linear-gradient-3);}.cls-4{fill:url(#linear-gradient-4);}.cls-5{fill:url(#linear-gradient-5);}.cls-6{fill:url(#linear-gradient-6);}.cls-7{fill:url(#linear-gradient-7);}.cls-8{fill:url(#linear-gradient-8);}.cls-9{fill:url(#linear-gradient-9);}.cls-10{fill:url(#linear-gradient-10);}.cls-11{fill:url(#linear-gradient-11);}.cls-12{fill:url(#linear-gradient-12);}.cls-13{fill:url(#linear-gradient-13);}.cls-14{fill:url(#linear-gradient-14);}.cls-15{fill:url(#linear-gradient-15);}.cls-16{fill:url(#linear-gradient-16);}</style><linearGradient id="linear-gradient" x1="1588.15" y1="929.46" x2="3114.59" y2="-727.61" gradientTransform="matrix(0.01, 1, -1, 0.01, 2954.53, -1619.67)" gradientUnits="userSpaceOnUse"><stop offset="0.18" stop-color="#9a00aa"/><stop offset="0.51" stop-color="#da4378"/><stop offset="0.55" stop-color="#de4885"/><stop offset="0.86" stop-color="#ff6aea"/></linearGradient><linearGradient id="linear-gradient-2" x1="1493.32" y1="563.65" x2="2613.48" y2="-652.37" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-3" x1="1463.26" y1="1556.27" x2="2826.14" y2="76.76" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-4" x1="1694.02" y1="797.82" x2="2249.44" y2="194.87" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-5" x1="1857.03" y1="1198.15" x2="2774.41" y2="202.26" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-6" x1="1887.7" y1="206.84" x2="2573.75" y2="-537.92" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-7" x1="1712.39" y1="1787.92" x2="2902.14" y2="496.36" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-8" x1="1630.9" y1="2134.16" x2="2551.29" y2="1135.01" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-9" x1="1689.38" y1="2636.19" x2="2693.4" y2="1546.25" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-10" x1="1816.06" y1="2257.99" x2="2820.84" y2="1167.22" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-11" x1="1360.78" y1="2015.73" x2="2669.6" y2="594.9" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-12" x1="1842.7" y1="2915.26" x2="2603.12" y2="2089.76" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-13" x1="1542.21" y1="2605.7" x2="2302.11" y2="1780.77" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-14" x1="1485.36" y1="3087.01" x2="2633.27" y2="1840.88" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-15" x1="1624.4" y1="2188.72" x2="2118.33" y2="1652.52" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-16" x1="1635.01" y1="952.39" x2="2065.28" y2="485.29" xlink:href="#linear-gradient"/></defs><title>Asset 4</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="2824.96 402.42 2588.65 258.8 2197.98 407.55 2605.9 542.31 2824.96 402.42"/><polygon class="cls-2" points="2980.55 191.11 2807.13 85.71 2520.45 194.87 2819.79 293.76 2980.55 191.11"/><polygon class="cls-3" points="2112.83 236.97 1901.85 108.73 1553.04 241.55 1917.24 361.87 2112.83 236.97"/><polygon class="cls-4" points="2456.9 235.96 2370.91 183.7 2228.76 237.83 2377.19 286.86 2456.9 235.96"/><polygon class="cls-5" points="2244.51 503.36 2102.49 417.04 1867.7 506.44 2112.86 587.43 2244.51 503.36"/><polygon class="cls-6" points="3116.79 461.3 3010.58 396.74 2835 463.6 3018.33 524.16 3116.79 461.3"/><polygon class="cls-7" points="1793.97 439.63 1609.79 327.68 1305.29 443.62 1623.23 548.66 1793.97 439.63"/><polygon class="cls-8" points="1308.23 285.73 1165.74 199.13 930.18 288.82 1176.14 370.07 1308.23 285.73"/><polygon class="cls-9" points="849.8 371.67 694.37 277.2 437.4 375.04 705.71 463.68 849.8 371.67"/><polygon class="cls-10" points="1229.42 495.46 1073.87 400.92 816.71 498.84 1085.23 587.54 1229.42 495.46"/><polygon class="cls-11" points="1624.68 123.15 1422.07 0 1087.09 127.55 1436.85 243.09 1624.68 123.15"/><polygon class="cls-12" points="446.43 459.22 328.71 387.67 134.09 461.77 337.3 528.9 446.43 459.22"/><polygon class="cls-13" points="753.25 156.06 635.61 84.56 441.12 158.62 644.19 225.7 753.25 156.06"/><polygon class="cls-14" points="471.5 211.54 293.79 103.53 0 215.4 306.76 316.74 471.5 211.54"/><polygon class="cls-15" points="1033.79 160.54 957.32 114.06 830.9 162.2 962.9 205.8 1033.79 160.54"/><polygon class="cls-16" points="2237.34 143.26 2170.73 102.78 2060.61 144.71 2175.6 182.69 2237.34 143.26"/></g></g></svg>
+
+ <!-- <img id="crystals" src="pieces/crystalstream.png" alt="crystal stream in the background"> -->
+</div>
+
+<!-- background -->
+<img id="fbackground" src="pieces/fbackground.png" alt="background">
+
+</div>
+
+<a href="index.html"><img id="return" src="pieces/return.png" alt="Return Button"></a>
+  </body>
+</html>

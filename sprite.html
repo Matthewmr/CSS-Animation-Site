@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>A Sprite Animation</title>
+
+    <style media="screen">
+
+      .stage{
+        height: 600px;
+        width: 600px;
+        background: url(pieces/spriteslong.png) center left;
+        animation: play 20s steps(11) infinite;
+        position: relative;
+        left: 500px;
+        top: 50px;
+      }
+
+      #return {
+        width: 200px;
+        height:100px;
+        position: fixed;
+        bottom: 600px;
+      }
+
+      /* .stage:hover{animation: play 1.8s steps(12) infinite;} */
+
+      @keyframes play {
+        from{background-position: 0px;
+        /* top:0;
+        left:0; */
+                      }
+        to{background-position: -6600px;
+        /* top:100px;
+        left:400px; */
+                      }
+      }
+    </style>
+  </head>
+  <body>
+<div class="stage">
+
+</div>
+
+<a href="index.html"><img id="return" src="pieces/return.png" alt="Return Button"></a>
+  </body>
+</html>
